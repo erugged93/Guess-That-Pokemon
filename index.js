@@ -1,13 +1,18 @@
-'use strict';
+
 // const uniqueRandomArray = require('unique-random-array');
 const pokemon = require('./data/pokemon.json');
+var $ = require('jquery');
 
-const randomNumber = new Map()
+// const randomNumber = new Map()
 
-exports.random = {
-	// const random = uniqueRandomArray(pokemon);
-	// randomNumber.set();
-	// return random();
+// exports.randomPokemon = {
+// 	var random = uniqueRandomArray(pokemon);
+// 	// randomNumber.set();
+// 	return random();
+// }
+
+exports.hello = {
+	// alert("hello in index");
 }
 
 exports.isGen = (id, gen) => {

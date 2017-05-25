@@ -36,8 +36,25 @@
 
 // alert("Hello");
 var beenClicked = false;
+// var pokemon = $.ajax({
+//   url: "./index.js",
+//   dataType: 'script',
+//   data: {
+//   	format: 'js'
+//   },
+//   async: false
+// });
+
+var pokemon = require('./index.js');
+var $ = require('jquery');
+
 
 $(document).ready(function() {
+	
+	// alert(pokemon.random());
+
+	// console.log(pokemon.isGen(151,1));
+	// console.log(pokemon.makeGuess(150,"Mewtwo"));
     $("#demo").html("Hello, World!");
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
 
@@ -46,11 +63,21 @@ $(document).ready(function() {
     	{
     		beenClicked = true;
     		$("#button").html("Make your first guess");
-    		$(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">x</a></div>');
+    		$(wrapper).append('<div><input type="text" name="mytext[]"/></div>');
+    		$(wrapper).append('<form id="guess" action=""><input type="radio" name="criteria" value="name"> Name<br><input type="radio" name="criteria" value="generation"> Generation<br>' +
+    			'<input type="radio" name="criteria" value="type"> Type<br></form>')
     	}
     	else
-    		$("#button").html("Sike");
+    	{
+    		// $("#button").html("Sike");
+    		alert($('input[name=criteria]:checked', '#guess').val());
+    		alert(pokemon.isGen(151,1));
+   				 	}
     });
+
+    $('#guess input').on('check', function() {
+   alert($('input[name=criteria]:checked', '#guess').val()); 
+});
 
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove();
