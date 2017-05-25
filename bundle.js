@@ -437,6 +437,7 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
+var answerPokemon = Math.floor((Math.random() * 386) + 1);
 
 
 $(document).ready(function() {
@@ -447,22 +448,32 @@ $(document).ready(function() {
 	// console.log(pokemon.makeGuess(150,"Mewtwo"));
     $("#demo").html("Hello, World!");
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var guesses 		= $("#guesses");
+    var numOfGuesses = 0;
+    $(guesses).hide();
 
     $("#button").on("click",function(){
     	if (!beenClicked)
     	{
     		beenClicked = true;
     		$("#button").html("Make your first guess");
-    		$(wrapper).append('<div><input type="text" name="mytext[]"/></div>');
+    		$(wrapper).append('<div><input id="answer" type="text" name="mytext[]"/></div>');
     		$(wrapper).append('<form id="guess" action=""><input type="radio" name="criteria" value="name"> Name<br><input type="radio" name="criteria" value="generation"> Generation<br>' +
     			'<input type="radio" name="criteria" value="type"> Type<br></form>')
     	}
     	else
     	{
+    		if (numOfGuesses === 0)
+    			$(guesses).show();
+    		var guess = $("#answer").val();
     		// $("#button").html("Sike");
-    		alert($('input[name=criteria]:checked', '#guess').val());
-    		alert(pokemon.isGen(151,1));
-   				 	}
+    		if ($('input[name=criteria]:checked', '#guess').val()==="name")
+    		{	
+    			// alert( guess);
+    			$(guesses).append('<h5>Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
+    			numOfGuesses++;
+    		}
+   		}
     });
 
     $('#guess input').on('check', function() {
