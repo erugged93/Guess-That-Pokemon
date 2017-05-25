@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/erugged93/Guess-That-Pokemon/issues"
   },
-  "homepage": "https://github.com/erugged93/Guess-That-Pokemon#readme"
+  "homepage": "https://github.com/erugged93/Guess-That-Pokemon#readme",
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "jsdom": "^11.0.0"
+  }
 }
