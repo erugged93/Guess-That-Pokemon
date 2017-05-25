@@ -34,13 +34,26 @@
 // // });
 // });
 
-alert("Hello");
+// alert("Hello");
+var beenClicked = false;
 
 $(document).ready(function() {
     $("#demo").html("Hello, World!");
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
 
     $("#button").on("click",function(){
-    	alert("HELLO DUDE");
+    	if (!beenClicked)
+    	{
+    		beenClicked = true;
+    		$("#button").html("Make your first guess");
+    		$(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">x</a></div>');
+    	}
+    	else
+    		$("#button").html("Sike");
     });
+
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove();
+    })
 
 });
