@@ -17,6 +17,7 @@ exports.hello = {
 
 exports.isGen = (id, gen) => {
 	const info = pokemon[id-1];
+	// alert(gen + ' ' + info.gen)
 	if (info.gen === gen)
 		return true;
 	else
@@ -25,8 +26,13 @@ exports.isGen = (id, gen) => {
 
 exports.makeGuess = (id, guess) => {
 	const info = pokemon[id-1];
+
 	if (info.name === guess)
 		return true;
 	else
 		return false;
+}
+
+exports.giveAnswer = (id) => {
+	return pokemon[id-1].name;
 }

@@ -83,6 +83,22 @@ $(document).ready(function() {
     			$(guesses).append('<h5>Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
     			numOfGuesses++;
     		}
+    		if ($('input[name=criteria]:checked', '#guess').val()==="generation")
+    		{	
+    			var genGuess = parseInt(guess, 10) === NaN ? -1 : parseInt(guess,10)
+    			if (genGuess === -1 || genGuess > 3)
+    				alert("You have entered an invalid generation number")
+    			else
+    			{
+    				$(guesses).append('<h5>Is it generation ' + guess +'? '+ (pokemon.isGen(answerPokemon,genGuess) ? 'Yes':'No'));
+    				numOfGuesses++;
+    			}	
+    			
+    		}
+    		if ($('input[name=criteria]:checked', '#guess').val()==="type")
+    		{
+    			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
+    		}
    		}
     });
 
