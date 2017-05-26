@@ -36,3 +36,7 @@ exports.makeGuess = (id, guess) => {
 exports.giveAnswer = (id) => {
 	return pokemon[id-1].name;
 }
+
+exports.isEvolvedForm = (id) => {
+	return pokemon[id-1].evoStage > 1;
+}

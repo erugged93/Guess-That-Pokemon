@@ -59,17 +59,17 @@ $(document).ready(function() {
     $("#demo").html("Hello, World!");
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var guesses 		= $("#guesses");
+
     var numOfGuesses = 0;
     $(guesses).hide();
+    $(wrapper).hide();
 
     $("#button").on("click",function(){
     	if (!beenClicked)
     	{
     		beenClicked = true;
     		$("#button").html("Make your first guess");
-    		$(wrapper).append('<div><input id="answer" type="text" name="mytext[]"/></div>');
-    		$(wrapper).append('<form id="guess" action=""><input type="radio" name="criteria" value="name"> Name<br><input type="radio" name="criteria" value="generation"> Generation<br>' +
-    			'<input type="radio" name="criteria" value="type"> Type<br></form>')
+    		$(wrapper).show();
     	}
     	else
     	{

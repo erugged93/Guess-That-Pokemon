@@ -4,12 +4,21 @@
 	<title>Guess That Pokemon</title>
 </head>
 <body>
-<div class="input_fields_wrap">
+<div class="body">
 <p id="demo">
 		Hello There!
 </p>
 
 <button id="button">Start the search!</button>
+<div class="input_fields_wrap">
+<input id="answer" type="text" name="mytext[]"/>
+
+<form id="guess" action="">
+<input type="radio" name="criteria" value="name"> Name<br>
+<input type="radio" name="criteria" value="generation"> Generation<br>
+<input type="radio" name="criteria" value="type"> Type<br>
+<input type="radio" name="criteria" value="evolution"> Evolution<br></form>
+</div>
 </div>
 <div id="guesses">
 <h4>Previous Guesses</h4>
