@@ -16,7 +16,7 @@ exports.hello = {
 }
 
 exports.isGen = (id, gen) => {
-	const info = pokemon[id-1];
+	var info = pokemon[id-1];
 	// alert(gen + ' ' + info.gen)
 	if (info.gen === gen)
 		return true;
@@ -25,7 +25,7 @@ exports.isGen = (id, gen) => {
 }
 
 exports.makeGuess = (id, guess) => {
-	const info = pokemon[id-1];
+	var info = pokemon[id-1];
 
 	if (info.name === guess)
 		return true;
@@ -39,4 +39,12 @@ exports.giveAnswer = (id) => {
 
 exports.isEvolvedForm = (id) => {
 	return pokemon[id-1].evoStage > 1;
+}
+
+exports.isEvoStage = (id, evoStage) => {
+	var info = pokemon[id-1];
+	if (info.evoStage === evoStage)
+		return true;
+	else
+		return false;
 }

@@ -469,8 +469,7 @@ $(document).ready(function() {
     		// $("#button").html("Sike");
     		if ($('input[name=criteria]:checked', '#guess').val()==="name")
     		{	
-    			// alert( guess);
-    			$(guesses).append('<h5>Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
+    			$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
     			numOfGuesses++;
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="generation")
@@ -480,7 +479,7 @@ $(document).ready(function() {
     				alert("You have entered an invalid generation number")
     			else
     			{
-    				$(guesses).append('<h5>Is it generation ' + guess +'? '+ (pokemon.isGen(answerPokemon,genGuess) ? 'Yes':'No'));
+    				$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it generation ' + genGuess +'? '+ (pokemon.isGen(answerPokemon,genGuess) ? 'Yes':'No'));
     				numOfGuesses++;
     			}	
     			
@@ -489,7 +488,27 @@ $(document).ready(function() {
     		{
     			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
     		}
+    		if ($('input[name=criteria]:checked', '#guess').val()==="evolution") 
+    		{
+    			var evoGuess = parseInt(guess, 10) === NaN ? -1 : parseInt(guess,10)
+    			if (evoGuess === -1 || evoGuess > 4)
+    				alert("You have entered an invalid evolution stage number")
+    			else
+    			{
+    				$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it evolution stage ' + evoGuess +'? '+ (pokemon.isEvoStage(answerPokemon,evoGuess) ? 'Yes':'No'));
+    				numOfGuesses++;
+    			}
+    		}
    		}
+    });
+
+    $("#evolved").on("click", function() {
+    	alert("hello");
+    	if (numOfGuesses === 0)
+    	{
+    		$(guesses).show();
+    	}	
+    	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? 'Yes':'No'));
     });
 
     $('#guess input').on('check', function() {
@@ -520,7 +539,7 @@ exports.hello = {
 }
 
 exports.isGen = (id, gen) => {
-	const info = pokemon[id-1];
+	var info = pokemon[id-1];
 	// alert(gen + ' ' + info.gen)
 	if (info.gen === gen)
 		return true;
@@ -529,7 +548,7 @@ exports.isGen = (id, gen) => {
 }
 
 exports.makeGuess = (id, guess) => {
-	const info = pokemon[id-1];
+	var info = pokemon[id-1];
 
 	if (info.name === guess)
 		return true;
@@ -543,6 +562,14 @@ exports.giveAnswer = (id) => {
 
 exports.isEvolvedForm = (id) => {
 	return pokemon[id-1].evoStage > 1;
+}
+
+exports.isEvoStage = (id, evoStage) => {
+	var info = pokemon[id-1];
+	if (info.evoStage === evoStage)
+		return true;
+	else
+		return false;
 }
 },{"./data/pokemon.json":1,"jquery":4}],4:[function(require,module,exports){
 /*!
