@@ -48,6 +48,9 @@ var beenClicked = false;
 var pokemon = require('./index.js');
 var $ = require('jquery');
 var answerPokemon = Math.floor((Math.random() * 386) + 1);
+function tryParse(input) {
+	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
+}
 
 
 $(document).ready(function() {
@@ -84,7 +87,7 @@ $(document).ready(function() {
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="generation")
     		{	
-    			var genGuess = parseInt(guess, 10) === NaN ? -1 : parseInt(guess,10)
+    			var genGuess =  tryParse(guess)
     			if (genGuess === -1 || genGuess > 3)
     				alert("You have entered an invalid generation number")
     			else
@@ -100,7 +103,7 @@ $(document).ready(function() {
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="evolution") 
     		{
-    			var evoGuess = parseInt(guess, 10) === NaN ? -1 : parseInt(guess,10)
+    			var evoGuess = tryParse(guess)
     			if (evoGuess === -1 || evoGuess > 4)
     				alert("You have entered an invalid evolution stage number")
     			else
@@ -120,9 +123,9 @@ $(document).ready(function() {
     	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? 'Yes':'No'));
     });
 
-    $('#guess input').on('check', function() {
-   alert($('input[name=criteria]:checked', '#guess').val()); 
-});
+    $('#guess input').change('check', function() {
+   		$("#answer").val("");
+	});
 
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove();
