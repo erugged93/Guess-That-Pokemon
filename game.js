@@ -65,7 +65,12 @@ $(document).ready(function() {
     				alert("You have entered an invalid evolution stage number")
     			else
     			{
-    				$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it evolution stage ' + evoGuess +'? '+ (pokemon.isEvoStage(answerPokemon,evoGuess) ? 'Yes':'No'));
+            var answer = pokemon.isEvoStage(answerPokemon,evoGuess)
+            if (answer)
+                $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it evolution stage ' + evoGuess +'? Yes\nYOU WIN!!!!');
+            else {
+                  $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it evolution stage ' + evoGuess +'? No');
+                }
     				numOfGuesses++;
     			}
     		}
