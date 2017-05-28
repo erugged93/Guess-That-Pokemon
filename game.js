@@ -1,49 +1,5 @@
-// var jsdom = require("jsdom").jsdom;
-// jsdom.env("", function(err, window) {
-//     if (err) {
-//         console.error(err);
-//         return;
-//     }
-//     global.$ = require("jquery")(window);
-// })
 
-// $(document).ready(function() {
-    
-// 	var pokemon = require('./index.js');
-
-// 	console.log(pokemon.isGen(151,1));
-// 	console.log(pokemon.makeGuess(150,"Mewtwo"));
-// 	alert("Hello");
-
-//     // $("button").on("click",function(){
-//     //   alert("hello");
-//     //   for (var i = 0; i < 152; i++) {
-//     //   $.ajax({
-//     //     headers:{  
-//     //        "key":"your key",
-//     //  "Accept":"application/json",//depends on your api
-//     //   "Content-type":"application/x-www-form-urlencoded"//depends on your api
-//     //     },   url:"http://pokeapi.co/api/v2/pokemon/"+i+"/",
-//     //     success:function(response){
-//     //       var r=JSON.parse(response);
-//     //       // $("#main").html(r.base);
-//     //       console.log(r);
-//     //     }
-//     //   });
-// //   }
-// // });
-// });
-
-// alert("Hello");
 var beenClicked = false;
-// var pokemon = $.ajax({
-//   url: "./index.js",
-//   dataType: 'script',
-//   data: {
-//   	format: 'js'
-//   },
-//   async: false
-// });
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
@@ -54,7 +10,7 @@ function tryParse(input) {
 
 
 $(document).ready(function() {
-	
+
 	// alert(pokemon.random());
 
 	// console.log(pokemon.isGen(151,1));
@@ -63,7 +19,7 @@ $(document).ready(function() {
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var guesses 		= $("#guesses");
 
-    var numOfGuesses = 0;
+    var numOfGuesses = 1;
     $(guesses).hide();
     $(wrapper).hide();
 
@@ -76,17 +32,17 @@ $(document).ready(function() {
     	}
     	else
     	{
-    		if (numOfGuesses === 0)
+    		if (numOfGuesses === 1)
     			$(guesses).show();
     		var guess = $("#answer").val();
     		// $("#button").html("Sike");
     		if ($('input[name=criteria]:checked', '#guess').val()==="name")
-    		{	
+    		{
     			$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
     			numOfGuesses++;
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="generation")
-    		{	
+    		{
     			var genGuess =  tryParse(guess)
     			if (genGuess === -1 || genGuess > 3)
     				alert("You have entered an invalid generation number")
@@ -94,14 +50,14 @@ $(document).ready(function() {
     			{
     				$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it generation ' + genGuess +'? '+ (pokemon.isGen(answerPokemon,genGuess) ? 'Yes':'No'));
     				numOfGuesses++;
-    			}	
-    			
+    			}
+
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="type")
     		{
     			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
     		}
-    		if ($('input[name=criteria]:checked', '#guess').val()==="evolution") 
+    		if ($('input[name=criteria]:checked', '#guess').val()==="evolution")
     		{
     			var evoGuess = tryParse(guess)
     			if (evoGuess === -1 || evoGuess > 4)
@@ -116,11 +72,12 @@ $(document).ready(function() {
     });
 
     $("#evolved").on("click", function() {
-    	if (numOfGuesses === 0)
+    	if (numOfGuesses === 1)
     	{
     		$(guesses).show();
-    	}	
+    	}
     	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? 'Yes':'No'));
+      numOfGuesses++;
     });
 
     $('#guess input').change('check', function() {

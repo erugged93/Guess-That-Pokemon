@@ -24,8 +24,8 @@ module.exports=[
 	{"name":"Fearow", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Ekans", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Arbok", "gen":1, "evoStage":2, "Types":""},
-	{"name":"Pikachu", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Raichu", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Pikachu", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Raichu", "gen":1, "evoStage":3, "Types":""},
 	{"name":"Sandshrew", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Sandslash", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Nidoran♀", "gen":1, "evoStage":1, "Types":""},
@@ -34,12 +34,12 @@ module.exports=[
 	{"name":"Nidoran♂", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Nidorino", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Nidoking", "gen":1, "evoStage":3, "Types":""},
-	{"name":"Clefairy", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Clefable", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Clefairy", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Clefable", "gen":1, "evoStage":3, "Types":""},
 	{"name":"Vulpix", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Ninetales", "gen":1, "evoStage":2, "Types":""},
-	{"name":"Jigglypuff", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Wigglytuff", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Jigglypuff", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Wigglytuff", "gen":1, "evoStage":3, "Types":""},
 	{"name":"Zubat", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Golbat", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Oddish", "gen":1, "evoStage":1, "Types":""},
@@ -152,230 +152,230 @@ module.exports=[
 	{"name":"Mewtwo", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Mew", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Chikorita", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Bayleef", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Meganium", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Bayleef", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Meganium", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Cyndaquil", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Quilava", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Typhlosion", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Quilava", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Typhlosion", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Totodile", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Croconaw", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Feraligatr", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Croconaw", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Feraligatr", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Sentret", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Furret", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Furret", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Hoothoot", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Noctowl", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Noctowl", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Ledyba", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Ledian", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Ledian", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Spinarak", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Ariados", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Crobat", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Ariados", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Crobat", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Chinchou", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Lanturn", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Lanturn", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Pichu", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Cleffa", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Igglybuff", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Togepi", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Togetic", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Togetic", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Natu", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Xatu", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Xatu", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Mareep", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Flaaffy", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Ampharos", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Bellossom", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Flaaffy", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Ampharos", "gen":2, "evoStage":3, "Types":""},
+	{"name":"Bellossom", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Marill", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Azumarill", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Azumarill", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Sudowoodo", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Politoed", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Hoppip", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Skiploom", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Jumpluff", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Skiploom", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Jumpluff", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Aipom", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Sunkern", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Sunflora", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Sunflora", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Yanma", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Wooper", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Quagsire", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Espeon", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Umbreon", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Quagsire", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Espeon", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Umbreon", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Murkrow", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Slowking", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Slowking", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Misdreavus", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Unown", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Wobbuffet", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Girafarig", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Pineco", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Forretress", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Forretress", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Dunsparce", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Gligar", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Steelix", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Steelix", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Snubbull", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Granbull", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Granbull", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Qwilfish", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Scizor", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Scizor", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Shuckle", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Heracross", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Sneasel", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Teddiursa", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Ursaring", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Ursaring", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Slugma", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Magcargo", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Magcargo", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Swinub", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Piloswine", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Piloswine", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Corsola", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Remoraid", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Octillery", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Octillery", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Delibird", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Mantine", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Skarmory", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Houndour", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Houndoom", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Kingdra", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Houndoom", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Kingdra", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Phanpy", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Donphan", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Porygon2", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Donphan", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Porygon2", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Stantler", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Smeargle", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Tyrogue", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Hitmontop", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Hitmontop", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Smoochum", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Elekid", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Magby", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Miltank", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Blissey", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Blissey", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Raikou", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Entei", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Suicune", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Larvitar", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Pupitar", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Tyranitar", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Pupitar", "gen":2, "evoStage":2, "Types":""},
+	{"name":"Tyranitar", "gen":2, "evoStage":3, "Types":""},
 	{"name":"Lugia", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Ho-Oh", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Celebi", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Treecko", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Grovyle", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Sceptile", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Grovyle", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Sceptile", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Torchic", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Combusken", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Blaziken", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Combusken", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Blaziken", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Mudkip", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Marshtomp", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Swampert", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Marshtomp", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Swampert", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Poochyena", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Mightyena", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Mightyena", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Zigzagoon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Linoone", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Linoone", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Wurmple", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Silcoon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Beautifly", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Cascoon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Dustox", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Silcoon", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Beautifly", "gen":3, "evoStage":3, "Types":""},
+	{"name":"Cascoon", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Dustox", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Lotad", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Lombre", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Ludicolo", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Lombre", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Ludicolo", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Seedot", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Nuzleaf", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Shiftry", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Nuzleaf", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Shiftry", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Taillow", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Swellow", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Swellow", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Wingull", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Pelipper", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Pelipper", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Ralts", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Kirlia", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Gardevoir", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Kirlia", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Gardevoir", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Surskit", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Masquerain", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Masquerain", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Shroomish", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Breloom", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Breloom", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Slakoth", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Vigoroth", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Slaking", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Vigoroth", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Slaking", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Nincada", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Ninjask", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Ninjask", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Shedinja", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Whismur", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Loudred", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Exploud", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Loudred", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Exploud", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Makuhita", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Hariyama", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Hariyama", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Azurill", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Nosepass", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Skitty", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Delcatty", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Delcatty", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Sableye", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Mawile", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Aron", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Lairon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Aggron", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Lairon", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Aggron", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Meditite", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Medicham", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Medicham", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Electrike", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Manectric", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Manectric", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Plusle", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Minun", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Volbeat", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Illumise", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Roselia", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Gulpin", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Swalot", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Swalot", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Carvanha", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Sharpedo", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Sharpedo", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Wailmer", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Wailord", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Wailord", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Numel", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Camerupt", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Camerupt", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Torkoal", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Spoink", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Grumpig", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Spinda", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Trapinch", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Vibrava", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Flygon", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Vibrava", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Flygon", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Cacnea", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Cacturne", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Cacturne", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Swablu", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Altaria", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Altaria", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Zangoose", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Seviper", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Lunatone", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Solrock", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Barboach", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Whiscash", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Whiscash", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Corphish", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Crawdaunt", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Crawdaunt", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Baltoy", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Claydol", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Claydol", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Lileep", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Cradily", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Cradily", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Anorith", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Armaldo", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Armaldo", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Feebas", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Milotic", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Milotic", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Castform", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Kecleon", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Shuppet", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Banette", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Banette", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Duskull", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Dusclops", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Dusclops", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Tropius", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Chimecho", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Chimecho", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Absol", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Wynaut", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Snorunt", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Glalie", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Glalie", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Spheal", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Sealeo", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Walrein", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Sealeo", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Walrein", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Clamperl", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Huntail", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Gorebyss", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Huntail", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Gorebyss", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Relicanth", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Luvdisc", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Bagon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Shelgon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Salamence", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Shelgon", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Salamence", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Beldum", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Metang", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Metagross", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Metang", "gen":3, "evoStage":2, "Types":""},
+	{"name":"Metagross", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Regirock", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Regice", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Registeel", "gen":3, "evoStage":1, "Types":""},
@@ -388,52 +388,8 @@ module.exports=[
 	{"name":"Deoxys", "gen":3, "evoStage":1, "Types":""}
 ]
 },{}],2:[function(require,module,exports){
-// var jsdom = require("jsdom").jsdom;
-// jsdom.env("", function(err, window) {
-//     if (err) {
-//         console.error(err);
-//         return;
-//     }
-//     global.$ = require("jquery")(window);
-// })
 
-// $(document).ready(function() {
-    
-// 	var pokemon = require('./index.js');
-
-// 	console.log(pokemon.isGen(151,1));
-// 	console.log(pokemon.makeGuess(150,"Mewtwo"));
-// 	alert("Hello");
-
-//     // $("button").on("click",function(){
-//     //   alert("hello");
-//     //   for (var i = 0; i < 152; i++) {
-//     //   $.ajax({
-//     //     headers:{  
-//     //        "key":"your key",
-//     //  "Accept":"application/json",//depends on your api
-//     //   "Content-type":"application/x-www-form-urlencoded"//depends on your api
-//     //     },   url:"http://pokeapi.co/api/v2/pokemon/"+i+"/",
-//     //     success:function(response){
-//     //       var r=JSON.parse(response);
-//     //       // $("#main").html(r.base);
-//     //       console.log(r);
-//     //     }
-//     //   });
-// //   }
-// // });
-// });
-
-// alert("Hello");
 var beenClicked = false;
-// var pokemon = $.ajax({
-//   url: "./index.js",
-//   dataType: 'script',
-//   data: {
-//   	format: 'js'
-//   },
-//   async: false
-// });
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
@@ -444,7 +400,7 @@ function tryParse(input) {
 
 
 $(document).ready(function() {
-	
+
 	// alert(pokemon.random());
 
 	// console.log(pokemon.isGen(151,1));
@@ -453,7 +409,7 @@ $(document).ready(function() {
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var guesses 		= $("#guesses");
 
-    var numOfGuesses = 0;
+    var numOfGuesses = 1;
     $(guesses).hide();
     $(wrapper).hide();
 
@@ -466,17 +422,17 @@ $(document).ready(function() {
     	}
     	else
     	{
-    		if (numOfGuesses === 0)
+    		if (numOfGuesses === 1)
     			$(guesses).show();
     		var guess = $("#answer").val();
     		// $("#button").html("Sike");
     		if ($('input[name=criteria]:checked', '#guess').val()==="name")
-    		{	
+    		{
     			$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
     			numOfGuesses++;
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="generation")
-    		{	
+    		{
     			var genGuess =  tryParse(guess)
     			if (genGuess === -1 || genGuess > 3)
     				alert("You have entered an invalid generation number")
@@ -484,14 +440,14 @@ $(document).ready(function() {
     			{
     				$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it generation ' + genGuess +'? '+ (pokemon.isGen(answerPokemon,genGuess) ? 'Yes':'No'));
     				numOfGuesses++;
-    			}	
-    			
+    			}
+
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="type")
     		{
     			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
     		}
-    		if ($('input[name=criteria]:checked', '#guess').val()==="evolution") 
+    		if ($('input[name=criteria]:checked', '#guess').val()==="evolution")
     		{
     			var evoGuess = tryParse(guess)
     			if (evoGuess === -1 || evoGuess > 4)
@@ -506,22 +462,24 @@ $(document).ready(function() {
     });
 
     $("#evolved").on("click", function() {
-    	if (numOfGuesses === 0)
+    	if (numOfGuesses === 1)
     	{
     		$(guesses).show();
-    	}	
+    	}
     	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? 'Yes':'No'));
+      numOfGuesses++;
     });
 
     $('#guess input').change('check', function() {
-   	 $("#answer").val("");
-});
+   		$("#answer").val("");
+	});
 
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove();
     })
 
 });
+
 },{"./index.js":3,"jquery":4}],3:[function(require,module,exports){
 
 // const uniqueRandomArray = require('unique-random-array');
