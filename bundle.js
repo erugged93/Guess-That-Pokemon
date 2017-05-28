@@ -394,8 +394,8 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
-// var answerPokemon = Math.floor((Math.random() * 386) + 1);
-var answerPokemon = 151;
+var answerPokemon = Math.floor((Math.random() * 386) + 1);
+// var answerPokemon = 151;
 function tryParse(input) {
 	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
