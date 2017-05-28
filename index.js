@@ -41,6 +41,10 @@ exports.isEvolvedForm = (id) => {
 	return pokemon[id-1].evoStage > 1;
 }
 
+exports.isLegendary = (id) => {
+	return pokemon[id-1].legendary;
+}
+
 exports.isEvoStage = (id, evoStage) => {
 	var info = pokemon[id-1];
 	if (info.evoStage === evoStage)

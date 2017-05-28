@@ -3,7 +3,8 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
-var answerPokemon = Math.floor((Math.random() * 386) + 1);
+// var answerPokemon = Math.floor((Math.random() * 386) + 1);
+var answerPokemon = 151;
 function tryParse(input) {
 	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
@@ -77,6 +78,15 @@ $(document).ready(function() {
     		$(guesses).show();
     	}
     	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? 'Yes':'No'));
+      numOfGuesses++;
+    });
+
+    $("#legendary").on("click", function() {
+    	if (numOfGuesses === 1)
+    	{
+    		$(guesses).show();
+    	}
+    	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it a legendary pokemon? ' + (pokemon.isLegendary(answerPokemon) ? 'Yes':'No'));
       numOfGuesses++;
     });
 

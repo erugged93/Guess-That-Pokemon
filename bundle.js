@@ -143,14 +143,14 @@ module.exports=[
 	{"name":"Kabutops", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Aerodactyl", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Snorlax", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Articuno", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Zapdos", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Moltres", "gen":1, "evoStage":1, "Types":""},
+	{"name":"Articuno", "gen":1, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Zapdos", "gen":1, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Moltres", "gen":1, "evoStage":1, "Types":"", "legendary":true},
 	{"name":"Dratini", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Dragonair", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Dragonite", "gen":1, "evoStage":3, "Types":""},
-	{"name":"Mewtwo", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Mew", "gen":1, "evoStage":1, "Types":""},
+	{"name":"Mewtwo", "gen":1, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Mew", "gen":1, "evoStage":1, "Types":"", "legendary":true},
 	{"name":"Chikorita", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Bayleef", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Meganium", "gen":2, "evoStage":3, "Types":""},
@@ -242,15 +242,15 @@ module.exports=[
 	{"name":"Magby", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Miltank", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Blissey", "gen":2, "evoStage":2, "Types":""},
-	{"name":"Raikou", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Entei", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Suicune", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Raikou", "gen":2, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Entei", "gen":2, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Suicune", "gen":2, "evoStage":1, "Types":"", "legendary":true},
 	{"name":"Larvitar", "gen":2, "evoStage":1, "Types":""},
 	{"name":"Pupitar", "gen":2, "evoStage":2, "Types":""},
 	{"name":"Tyranitar", "gen":2, "evoStage":3, "Types":""},
-	{"name":"Lugia", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Ho-Oh", "gen":2, "evoStage":1, "Types":""},
-	{"name":"Celebi", "gen":2, "evoStage":1, "Types":""},
+	{"name":"Lugia", "gen":2, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Ho-Oh", "gen":2, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Celebi", "gen":2, "evoStage":1, "Types":"", "legendary":true},
 	{"name":"Treecko", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Grovyle", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Sceptile", "gen":3, "evoStage":3, "Types":""},
@@ -376,24 +376,26 @@ module.exports=[
 	{"name":"Beldum", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Metang", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Metagross", "gen":3, "evoStage":3, "Types":""},
-	{"name":"Regirock", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Regice", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Registeel", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Latias", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Latios", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Kyogre", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Groudon", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Rayquaza", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Jirachi", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Deoxys", "gen":3, "evoStage":1, "Types":""}
+	{"name":"Regirock", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Regice", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Registeel", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Latias", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Latios", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Kyogre", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Groudon", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Rayquaza", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Jirachi", "gen":3, "evoStage":1, "Types":"", "legendary":true},
+	{"name":"Deoxys", "gen":3, "evoStage":1, "Types":"", "legendary":true}
 ]
+
 },{}],2:[function(require,module,exports){
 
 var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
-var answerPokemon = Math.floor((Math.random() * 386) + 1);
+// var answerPokemon = Math.floor((Math.random() * 386) + 1);
+var answerPokemon = 151;
 function tryParse(input) {
 	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
@@ -470,6 +472,15 @@ $(document).ready(function() {
       numOfGuesses++;
     });
 
+    $("#legendary").on("click", function() {
+    	if (numOfGuesses === 1)
+    	{
+    		$(guesses).show();
+    	}
+    	$(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it a legendary pokemon? ' + (pokemon.isLegendary(answerPokemon) ? 'Yes':'No'));
+      numOfGuesses++;
+    });
+
     $('#guess input').change('check', function() {
    		$("#answer").val("");
 	});
@@ -524,6 +535,10 @@ exports.isEvolvedForm = (id) => {
 	return pokemon[id-1].evoStage > 1;
 }
 
+exports.isLegendary = (id) => {
+	return pokemon[id-1].legendary;
+}
+
 exports.isEvoStage = (id, evoStage) => {
 	var info = pokemon[id-1];
 	if (info.evoStage === evoStage)
@@ -531,6 +546,7 @@ exports.isEvoStage = (id, evoStage) => {
 	else
 		return false;
 }
+
 },{"./data/pokemon.json":1,"jquery":4}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
