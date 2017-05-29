@@ -4,28 +4,58 @@
 	<title>Guess That Pokemon</title>
 </head>
 <body>
-<div class="body">
-<p id="demo">
-		Hello There!
-</p>
+<div class="container-fluid">
+	<div class="jumbotron">
+    <h1>Guess That Pokemon!</h1>
+  </div>
 
-<button id="button">Start the search!</button>
+
+<button class="btn btn-primary" id="button">Start the search!</button>
 <div class="input_fields_wrap">
-<input id="answer" type="text" name="mytext[]"/>
+<div id="answerInput"><input id="answer" type="text" name="mytext"/></div>
 
 <form id="guess" action="">
 <input type="radio" name="criteria" id="radio_name" value="name"> Name<br>
 <input type="radio" name="criteria" id="radio_generation" value="generation"> Generation<br>
+
+<input type="radio" name="criteria" id="radio_evolution" value="evolution"> Evolution<br>
 <input type="radio" name="criteria" id="radio_type" value="type"> Type<br>
-<input type="radio" name="criteria" id="radio_evolution" value="evolution"> Evolution<br></form>
-<button id="evolved">Is Evolved?</button>
-<button id="legendary">Is Legendary?</button>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="selected">Type</span>
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+		<li><a href="#">Bug</a></li>
+		<li><a href="#">Dark</a></li>
+		<li><a href="#">Dragon</a></li>
+		<li><a href="#">Electric</a></li>
+		<li><a href="#">Fairy</a></li>
+		<li><a href="#">Fighting</a></li>
+		<li><a href="#">Fire</a></li>
+		<li><a href="#">Flying</a></li>
+		<li><a href="#">Ghost</a></li>
+		<li><a href="#">Grass</a></li>
+		<li><a href="#">Ground</a></li>
+		<li><a href="#">Ice</a></li>
+		<li><a href="#">Normal</a></li>
+		<li><a href="#">Poison</a></li>
+		<li><a href="#">Psychic</a></li>
+		<li><a href="#">Rock</a></li>
+		<li><a href="#">Steel</a></li>
+		<li><a href="#">Water</a></li>
+  </ul>
+</div></form>
+<div class="btn-group">
+<button class="btn btn-secondary" id="evolved">Is Evolved?</button>
+<button class="btn btn-secondary" id="legendary">Is Legendary?</button>
 </div>
 </div>
-<div id="guesses">
+</div>
+<div class="well" id="guesses">
 <h4>Previous Guesses</h4>
 </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="./bundle.js"></script>
 </body>
 </html>
