@@ -1,11 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports=[
 	{"name":"Bulbasaur", "gen":1, "evoStage":1, "Types":"Grass"},
-	{"name":"Ivysaur", "gen":1, "evoStage":2, "Types":""},
+	{"name":"Ivysaur", "gen":1, "evoStage":2, "Types":"Grass"},
 	{"name":"Venusaur", "gen":1, "evoStage":3, "Types":""},
-	{"name":"Charmander", "gen":1, "evoStage":1, "Types":""},
-	{"name":"Charmeleon", "gen":1, "evoStage":2, "Types":""},
-	{"name":"Charizard", "gen":1, "evoStage":3, "Types":""},
+	{"name":"Charmander", "gen":1, "evoStage":1, "Types":"Fire"},
+	{"name":"Charmeleon", "gen":1, "evoStage":2, "Types":"Fire"},
+	{"name":"Charizard", "gen":1, "evoStage":3, "Types":"Fire/Flying"},
 	{"name":"Squirtle", "gen":1, "evoStage":1, "Types":""},
 	{"name":"Wartortle", "gen":1, "evoStage":2, "Types":""},
 	{"name":"Blastoise", "gen":1, "evoStage":3, "Types":""},
@@ -394,8 +394,8 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
-var answerPokemon = Math.floor((Math.random() * 386) + 1);
-// var answerPokemon = 151;
+// var answerPokemon = Math.floor((Math.random() * 386) + 1);
+var answerPokemon = 6;
 function tryParse(input) {
 	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
@@ -421,11 +421,15 @@ $(document).ready(function() {
     		beenClicked = true;
     		$("#button").html("Make your first guess");
     		$(wrapper).show();
+        $("#radio_name").prop("checked", true);
     	}
     	else
     	{
     		if (numOfGuesses === 1)
-    			$(guesses).show();
+    		{
+          $(guesses).show();
+          $("#button").html("Make your next guess");
+        }
     		var guess = $("#answer").val();
     		// $("#button").html("Sike");
     		if ($('input[name=criteria]:checked', '#guess').val()==="name")
@@ -447,7 +451,9 @@ $(document).ready(function() {
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="type")
     		{
-    			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
+          $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.isType(answerPokemon,guess) ? 'Yes':'No'));
+    			numOfGuesses++;
+    			// $(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="evolution")
     		{
@@ -526,7 +532,7 @@ exports.isGen = (id, gen) => {
 exports.makeGuess = (id, guess) => {
 	var info = pokemon[id-1];
 
-	if (info.name === guess)
+	if (info.name.toLowerCase() === guess.toLowerCase())
 		return true;
 	else
 		return false;
@@ -534,6 +540,10 @@ exports.makeGuess = (id, guess) => {
 
 exports.giveAnswer = (id) => {
 	return pokemon[id-1].name;
+}
+
+exports.isType = (id, typeGuess) => {
+	return pokemon[id-1].Types.toLowerCase().indexOf(typeGuess.toLowerCase()) >=0;
 }
 
 exports.isEvolvedForm = (id) => {

@@ -27,7 +27,7 @@ exports.isGen = (id, gen) => {
 exports.makeGuess = (id, guess) => {
 	var info = pokemon[id-1];
 
-	if (info.name === guess)
+	if (info.name.toLowerCase() === guess.toLowerCase())
 		return true;
 	else
 		return false;
@@ -35,6 +35,10 @@ exports.makeGuess = (id, guess) => {
 
 exports.giveAnswer = (id) => {
 	return pokemon[id-1].name;
+}
+
+exports.isType = (id, typeGuess) => {
+	return pokemon[id-1].Types.toLowerCase().indexOf(typeGuess.toLowerCase()) >=0;
 }
 
 exports.isEvolvedForm = (id) => {

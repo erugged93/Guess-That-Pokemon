@@ -3,8 +3,8 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
-var answerPokemon = Math.floor((Math.random() * 386) + 1);
-// var answerPokemon = 151;
+// var answerPokemon = Math.floor((Math.random() * 386) + 1);
+var answerPokemon = 6;
 function tryParse(input) {
 	return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
@@ -30,11 +30,15 @@ $(document).ready(function() {
     		beenClicked = true;
     		$("#button").html("Make your first guess");
     		$(wrapper).show();
+        $("#radio_name").prop("checked", true);
     	}
     	else
     	{
     		if (numOfGuesses === 1)
-    			$(guesses).show();
+    		{
+          $(guesses).show();
+          $("#button").html("Make your next guess");
+        }
     		var guess = $("#answer").val();
     		// $("#button").html("Sike");
     		if ($('input[name=criteria]:checked', '#guess').val()==="name")
@@ -56,7 +60,9 @@ $(document).ready(function() {
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="type")
     		{
-    			$(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
+          $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.isType(answerPokemon,guess) ? 'Yes':'No'));
+    			numOfGuesses++;
+    			// $(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
     		}
     		if ($('input[name=criteria]:checked', '#guess').val()==="evolution")
     		{
