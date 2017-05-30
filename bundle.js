@@ -415,8 +415,14 @@ $(document).ready(function() {
   // console.log(pokemon.isGen(151,1));
   // console.log(pokemon.makeGuess(150,"Mewtwo"));
   $.getJSON("http://pokeapi.co/api/v2/pokemon/1/", function( data ) {
-    var items = [];
-    alert(data.types[0].type.name);
+    var items = '';
+    jQuery.each(data.types, function() {
+      // alert(this.type.name);
+      items += this.type.name + '/';
+      // items += item[index].type.name + '/';
+    })
+    // alert(data.types[0].type.name);
+    alert(items);
   // $.each( data, function( key, val ) {
   //   items.push( "<li id='" + key + "'>" + val + "</li>" );
   // });
