@@ -3,6 +3,7 @@ var beenClicked = false;
 
 var pokemon = require('./index.js');
 var $ = require('jquery');
+var pokeApiURL = "http://pokeapi.co/api/v2/pokemon/";
 // var answerPokemon = Math.floor((Math.random() * 386) + 1);
 var answerPokemon = 6;
 function tryParse(input) {
@@ -23,7 +24,7 @@ $(document).ready(function() {
 
   // console.log(pokemon.isGen(151,1));
   // console.log(pokemon.makeGuess(150,"Mewtwo"));
-  $.getJSON("http://pokeapi.co/api/v2/pokemon/1/", function( data ) {
+  $.getJSON(pokeApiURL + answerPokemon + "/", function( data ) {
     var items = '';
     jQuery.each(data.types, function() {
       // alert(this.type.name);
@@ -32,6 +33,8 @@ $(document).ready(function() {
     })
     // alert(data.types[0].type.name);
     alert(items);
+    var result = pokemon.addTypeInfo(answerPokemon, items)
+    alert(result);
     // TODO: Save this type info to the data structure
     
   // $.each( data, function( key, val ) {

@@ -1,6 +1,6 @@
 
 // const uniqueRandomArray = require('unique-random-array');
-const pokemon = require('./data/pokemon.json');
+var pokemon = require('./data/pokemon.json');
 var $ = require('jquery');
 
 // const randomNumber = new Map()
@@ -13,6 +13,11 @@ var $ = require('jquery');
 
 exports.hello = {
 	// alert("hello in index");
+}
+
+exports.addTypeInfo = (id, types) => {
+	pokemon[id-1].Types = types;
+	return pokemon[id-1].Types;
 }
 
 exports.isGen = (id, gen) => {
