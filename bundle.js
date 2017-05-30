@@ -414,13 +414,24 @@ $(document).ready(function() {
 
   // console.log(pokemon.isGen(151,1));
   // console.log(pokemon.makeGuess(150,"Mewtwo"));
+  $.getJSON("http://pokeapi.co/api/v2/pokemon/1/", function( data ) {
+    var items = [];
+    alert(data.types[0].type.name);
+  // $.each( data, function( key, val ) {
+  //   items.push( "<li id='" + key + "'>" + val + "</li>" );
+  // });
+
+    $("#dropdown-menu").append(items);
+  });
   $("#demo").html("Hello, World!");
   var wrapper         = $(".input_fields_wrap"); //Fields wrapper
   var guesses 		= $("#guesses");
+  var warning = $("#warning");
 
   var numOfGuesses = 1;
   $(guesses).hide();
   $(wrapper).hide();
+  $(warning).hide();
 
   $("#button").on("click",function(){
     if (!beenClicked)
@@ -447,14 +458,13 @@ $(document).ready(function() {
         else {
           $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'?' + answerNo() );
         }
-        // $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'? '+ (pokemon.makeGuess(answerPokemon,guess) ? 'Yes':'No'));
         numOfGuesses++;
         break;
         case "generation":
         var genGuess =  tryParse(guess)
         if (genGuess === -1 || genGuess > 3)
         {
-          alert("You have entered an invalid generation number");
+          $(warning).show().html("You have entered an invalid generation number");
         }
         else
         {
@@ -486,26 +496,6 @@ $(document).ready(function() {
         default:
 
       }
-      // $("#button").html("Sike");
-      // if ($('input[name=criteria]:checked', '#guess').val()==="name")
-      // {
-      //
-      // }
-      // if (==="generation")
-      // {
-      //
-      //
-      // }
-      // if ($('input[name=criteria]:checked', '#guess').val()==="type")
-      // {
-      //
-      //
-      // 	// $(guesses).append('<h5>The answer is: ' + (pokemon.giveAnswer(answerPokemon)));
-      // }
-      // if ($('input[name=criteria]:checked', '#guess').val()==="evolution")
-      // {
-      //
-      // }
     }
   });
 
@@ -543,6 +533,10 @@ $(document).ready(function() {
       $("#answer").val("");
     }
 
+  });
+
+  $('#deleteWarning').on('click', function() {
+    $(warning).hide();
   });
 
   $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
