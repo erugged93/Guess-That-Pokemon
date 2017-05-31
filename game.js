@@ -6,6 +6,7 @@ var $ = require('jquery');
 var pokeApiURL = "http://pokeapi.co/api/v2/pokemon/";
 // var answerPokemon = Math.floor((Math.random() * 386) + 1);
 var answerPokemon = 6;
+var sprite = ''
 function tryParse(input) {
   return parseInt(input, 10) === NaN ? -1 : parseInt(input,10)
 }
@@ -21,6 +22,11 @@ function answerNo() {
 $(document).ready(function() {
 
 var guesses     = $("#guesses");
+  var pictureFrame = $('#pictureFrame');
+  var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+  
+  var warning = $("#warning");
+  var mainFrame = $('#main-game');
   // alert(pokemon.random());
   function resetGuesses () {
     $(guesses).html('<h4>Previous Guesses</h4>');
@@ -28,41 +34,38 @@ var guesses     = $("#guesses");
 
   // console.log(pokemon.isGen(151,1));
   // console.log(pokemon.makeGuess(150,"Mewtwo"));
-  var sprite = '';
+
+
+    // alert(sprite);
+  $("#demo").html("Hello, World!");
+
+  var numOfGuesses = 1;
+  
+  $(guesses).hide();
+  $(wrapper).hide();
+  $(warning).hide();
+  $(pictureFrame).hide();
   $.getJSON(pokeApiURL + answerPokemon + "/", function( data ) {
     var items = '';
     sprite = data.sprites.front_default;
+    alert(sprite);
+    $(pictureFrame).children('img').attr("src",sprite);
+    
     // alert(sprite);
     jQuery.each(data.types, function() {
       // alert(this.type.name);
       items += this.type.name + '/';
       // items += item[index].type.name + '/';
     })
-    // alert(data.types[0].type.name);
-
-    // alert(items);
     var result = pokemon.addTypeInfo(answerPokemon, items)
-    // alert(result);
-    // TODO: Save this type info to the data structure
-    
-  // $.each( data, function( key, val ) {
-  //   items.push( "<li id='" + key + "'>" + val + "</li>" );
-  // });
-
-  $("#dropdown-menu").append(items);
 });
-  $("#demo").html("Hello, World!");
-  var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-  
-  var warning = $("#warning");
-  var pictureFrame = $('#pictureFrame');
-  var mainFrame = $('#main-game');
-
-  var numOfGuesses = 1;
-  $(guesses).hide();
-  $(wrapper).hide();
-  $(warning).hide();
-  $(pictureFrame).hide()
+  // alert(sprite);
+  $(pictureFrame).show();
+  // $(pictureFrame).children('img').attr("src",sprite);
+    setTimeout(function () {
+        $(pictureFrame).hide();
+    }, 2000);
+  // $(pictureFrame).hide()
 
   $("#button").on("click",function(){
     if (!beenClicked)
@@ -71,7 +74,7 @@ var guesses     = $("#guesses");
       $("#button").html("Make your first guess");
       $(wrapper).show();
       $("#radio_name").prop("checked", true);
-      
+
     }
     else
     {
