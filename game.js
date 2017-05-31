@@ -71,7 +71,7 @@ var guesses     = $("#guesses");
       $("#button").html("Make your first guess");
       $(wrapper).show();
       $("#radio_name").prop("checked", true);
-      // 
+      
     }
     else
     {
