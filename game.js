@@ -20,38 +20,49 @@ function answerNo() {
 
 $(document).ready(function() {
 
+var guesses     = $("#guesses");
   // alert(pokemon.random());
+  function resetGuesses () {
+    $(guesses).html('<h4>Previous Guesses</h4>');
+  }
 
   // console.log(pokemon.isGen(151,1));
   // console.log(pokemon.makeGuess(150,"Mewtwo"));
+  var sprite = '';
   $.getJSON(pokeApiURL + answerPokemon + "/", function( data ) {
     var items = '';
+    sprite = data.sprites.front_default;
+    // alert(sprite);
     jQuery.each(data.types, function() {
       // alert(this.type.name);
       items += this.type.name + '/';
       // items += item[index].type.name + '/';
     })
     // alert(data.types[0].type.name);
-    alert(items);
+
+    // alert(items);
     var result = pokemon.addTypeInfo(answerPokemon, items)
-    alert(result);
+    // alert(result);
     // TODO: Save this type info to the data structure
     
   // $.each( data, function( key, val ) {
   //   items.push( "<li id='" + key + "'>" + val + "</li>" );
   // });
 
-    $("#dropdown-menu").append(items);
-  });
+  $("#dropdown-menu").append(items);
+});
   $("#demo").html("Hello, World!");
   var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-  var guesses 		= $("#guesses");
+  
   var warning = $("#warning");
+  var pictureFrame = $('#pictureFrame');
+  var mainFrame = $('#main-game');
 
   var numOfGuesses = 1;
   $(guesses).hide();
   $(wrapper).hide();
   $(warning).hide();
+  $(pictureFrame).hide()
 
   $("#button").on("click",function(){
     if (!beenClicked)
@@ -63,6 +74,13 @@ $(document).ready(function() {
     }
     else
     {
+      if (numOfGuesses === 6)
+      {
+        // if(sprite==='')
+        $(mainFrame).hide();
+        $(pictureFrame).children('img').attr("src",sprite);
+        $(pictureFrame).show();
+      }
       if (numOfGuesses === 1)
       {
         $(guesses).show();
@@ -74,7 +92,7 @@ $(document).ready(function() {
         case "name":
         var answer = pokemon.makeGuess(answerPokemon,guess)
         if (answer)
-        $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'?' + answerYes() +'\nYOU WIN!!!!');
+          $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'?' + answerYes() +'\nYOU WIN!!!!');
         else {
           $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it ' + guess +'?' + answerNo() );
         }
@@ -106,7 +124,7 @@ $(document).ready(function() {
         case "evolution":
         var evoGuess = tryParse(guess)
         if (evoGuess === -1 || evoGuess > 4)
-        alert("You have entered an invalid evolution stage number")
+          alert("You have entered an invalid evolution stage number")
         else
         {
           $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it evolution stage ' + evoGuess +'? '+ (pokemon.isEvoStage(answerPokemon,evoGuess) ? answerYes():answerNo()));
@@ -119,45 +137,54 @@ $(document).ready(function() {
     }
   });
 
-  $('.dropdown-menu li').click(function(){
-    $('#selected').text($(this).text());
+$('.dropdown-menu li').click(function(){
+  $('#selected').text($(this).text());
+});
+
+$("#evolved").on("click", function() {
+  if (numOfGuesses === 1)
+  {
+    $(guesses).show();
+  }
+  $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? answerYes():answerNo()));
+  numOfGuesses++;
+});
+
+$("#legendary").on("click", function() {
+  if (numOfGuesses === 1)
+  {
+    $(guesses).show();
+  }
+  $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it a legendary pokemon? ' + (pokemon.isLegendary(answerPokemon) ? answerYes() :answerNo()));
+  numOfGuesses++;
+});
+
+$('#guess input').change('check', function() {
+  var radioSelection = $('input[name=criteria]:checked', '#guess').val();
+  if (radioSelection === "Type")
+  {
+    $("#answerInput").hide();
+  }
+  else {
+    if (!$("#answerInput").is(':visible'))
+      $("#answerInput").show();
+    $("#answer").val("");
+  }
+
+});
+
+$("#resetGame").on("click",function() {
+    // $('#main-game').show();
+    alert('Button Pressed');
+    $(mainFrame).show();
+    $(pictureFrame).hide();
+    resetGuesses();
+    // $('#picture').hide();
   });
 
-  $("#evolved").on("click", function() {
-    if (numOfGuesses === 1)
-    {
-      $(guesses).show();
-    }
-    $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it an evolved form? ' + (pokemon.isEvolvedForm(answerPokemon) ? answerYes():answerNo()));
-    numOfGuesses++;
-  });
-
-  $("#legendary").on("click", function() {
-    if (numOfGuesses === 1)
-    {
-      $(guesses).show();
-    }
-    $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it a legendary pokemon? ' + (pokemon.isLegendary(answerPokemon) ? answerYes() :answerNo()));
-    numOfGuesses++;
-  });
-
-  $('#guess input').change('check', function() {
-    var radioSelection = $('input[name=criteria]:checked', '#guess').val();
-    if (radioSelection === "Type")
-    {
-      $("#answerInput").hide();
-    }
-    else {
-      if (!$("#answerInput").is(':visible'))
-        $("#answerInput").show();
-      $("#answer").val("");
-    }
-
-  });
-
-  $('#deleteWarning').on('click', function() {
-    $(warning).hide();
-  });
+$('#deleteWarning').on('click', function() {
+  $(warning).hide();
+});
 
   $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
     e.preventDefault(); $(this).parent('div').remove();
