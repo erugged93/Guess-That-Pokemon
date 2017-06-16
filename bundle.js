@@ -291,7 +291,7 @@ module.exports=[
 	{"name":"Slaking", "gen":3, "evoStage":3, "Types":""},
 	{"name":"Nincada", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Ninjask", "gen":3, "evoStage":2, "Types":""},
-	{"name":"Shedinja", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Shedinja", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Whismur", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Loudred", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Exploud", "gen":3, "evoStage":3, "Types":""},
@@ -325,7 +325,7 @@ module.exports=[
 	{"name":"Camerupt", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Torkoal", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Spoink", "gen":3, "evoStage":1, "Types":""},
-	{"name":"Grumpig", "gen":3, "evoStage":1, "Types":""},
+	{"name":"Grumpig", "gen":3, "evoStage":2, "Types":""},
 	{"name":"Spinda", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Trapinch", "gen":3, "evoStage":1, "Types":""},
 	{"name":"Vibrava", "gen":3, "evoStage":2, "Types":""},
@@ -395,8 +395,10 @@ var beenClicked = false;
 var pokemon = require('./index.js');
 var $ = require('jquery');
 var pokeApiURL = "http://pokeapi.co/api/v2/pokemon/";
-// var answerPokemon = Math.floor((Math.random() * 386) + 1);
-var answerPokemon = 6;
+var pokeSpeciesURL = "http://pokeapi.co/api/v2/pokemon-species/"
+var pokeEvoURL = ""
+var answerPokemon = Math.floor((Math.random() * 386) + 1);
+// var answerPokemon = 6;
 var sprite = ''
 var guesses     = $("#guesses");
 var pictureFrame = $('#pictureFrame');
@@ -405,6 +407,7 @@ var lossMessage = $("#lossMessage");
 var warning = $("#warning");
 var mainFrame = $('#main-game');
 var hasGuesses = false;
+var partOfEvolutionChain = false;
   function tryParse(input) {
     return (isNaN(parseInt(input, 10)) ? -1 : parseInt(input,10));
   }
@@ -415,14 +418,60 @@ var hasGuesses = false;
   function answerNo() {
     return 'No <span class="glyphicon glyphicon-remove"></span>'
   }
+  function getPokemonInfo() {
+    $.ajax({
+        async: false,
+        url: pokeApiURL + answerPokemon + "/", 
+        success: function( data ) {
+          var items = '';
+          sprite = data.sprites.front_default;
+
+          jQuery.each(data.types, function() {
+          items += this.type.name + '/';;
+          })
+          var result = pokemon.addTypeInfo(answerPokemon, items)
+        }
+      }, getEvolutionChain());
+    ;
+  };
+  function getEvolutionChain() {
+    $.ajax({
+      async: false,
+      url: pokeSpeciesURL + answerPokemon + "/",
+      success: function (data) {
+        pokeEvoURL = data.evolution_chain.url;
+        // alert(pokeEvoURL);
+        // jQuery.each(data.chain.evolves_to, function() {
+        //   alert(this.species.name);
+        // });
+      }
+    });
+    isPartOfEvolutionChain();
+  };
+  function isPartOfEvolutionChain() {
+    alert(pokeEvoURL)
+    $.ajax({
+      async: false,
+      url: pokeEvoURL,
+      success: function (data) {
+        partOfEvolutionChain = !jQuery.isEmptyObject(data.chain.evolves_to);
+        // alert(jQuery.isEmptyObject(data.chain.evolves_to));
+        alert(partOfEvolutionChain ? "cool" : "uncool");
+        // jQuery.each(data.chain.evolves_to, function() {
+        //   alert(this.species.name);
+        // });
+      }
+    })
+  }
 
 
   $(document).ready(function() {
-
+    
 
   // alert(pokemon.random());
   function resetGuesses () {
     $(guesses).html('<h4>Previous Guesses</h4>');
+    $(guesses).hide();
   }
     // alert(sprite);
   // $("#demo").html("Hello, World!");
@@ -452,19 +501,7 @@ var hasGuesses = false;
     $(warning).hide();
     if (!beenClicked)
     {
-      $.ajax({
-        async: true,
-        url: pokeApiURL + answerPokemon + "/", 
-        success: function( data ) {
-          var items = '';
-          sprite = data.sprites.front_default;
-
-          jQuery.each(data.types, function() {
-          items += this.type.name + '/';;
-          })
-          var result = pokemon.addTypeInfo(answerPokemon, items)
-        }
-      });
+      getPokemonInfo();
       beenClicked = true;
       $("#button").html("Make your first guess");
       $(wrapper).show();
@@ -473,7 +510,7 @@ var hasGuesses = false;
     }
     else
     {
-      if (numOfGuesses === 6)
+      if (numOfGuesses === 10)
       {
         // if(sprite==='')
         $(mainFrame).hide();
@@ -565,6 +602,14 @@ var hasGuesses = false;
     }
     $(guesses).append('<h5>Guess ' + numOfGuesses + ': Is it a legendary pokemon? ' + (pokemon.isLegendary(answerPokemon) ? answerYes() :answerNo()));
     numOfGuesses++;
+  });
+
+  $("#evoChain").on("click", function() {
+    if (numOfGuesses === 1)
+    {
+      $(guesses).show();
+    }
+    guesses.append('<h5>Guess ' + numOfGuesses + ': Is it a part of an evolution chain? ' + (partOfEvolutionChain ? answerYes() :answerNo()))
   });
 
   $('#guess input').change('check', function() {
